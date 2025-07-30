@@ -4,13 +4,16 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Development Commands
 
-- **Start development server**: `npm start` or `npx expo start`
+- **Start development server**: `pnpm start` or `npx expo start`
 - **Run on specific platforms**:
-  - iOS: `npm run ios`
-  - Android: `npm run android`
-  - Web: `npm run web`
-- **Lint code**: `npm run lint`
-- **Reset project to blank state**: `npm run reset-project` (moves starter code to app-example/)
+  - iOS: `pnpm run ios`
+  - Android: `pnpm run android`
+  - Web: `pnpm run web`
+- **Lint code**: `pnpm run lint` (Biome)
+- **Fix lint issues**: `pnpm run lint:fix`
+- **Format code**: `pnpm run format`
+- **Lint with Expo**: `pnpm run lint:expo`
+- **Reset project to blank state**: `pnpm run reset-project` (moves starter code to app-example/)
 
 ## Project Architecture
 
@@ -20,6 +23,7 @@ This is an Expo React Native project using:
 - **TypeScript** with strict mode enabled
 - **React Navigation** with bottom tabs
 - **New Architecture** enabled (`newArchEnabled: true`)
+- **Biome** for linting and formatting
 
 ### Key Structure
 
@@ -52,4 +56,5 @@ The project includes example components in `app-example/` that demonstrate:
 
 - Expo configuration in `app.json` with platform-specific settings
 - TypeScript path mapping configured with `@/*` alias
-- ESLint using expo configuration with flat config format
+- Biome configuration in `biome.json` for linting and formatting
+- ESLint using expo configuration with flat config format (available via `pnpm run lint:expo`)
